@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sudipta Dutta — Portfolio</title>
+  <meta name="description" content="Sudipta Dutta — GIS Analyst & Research Enthusiast Portfolio" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; }
+    .gt { background: linear-gradient(90deg,#22d3ee,#a78bfa,#f472b6); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(30px);} 100% { opacity: 1; transform: translateY(0);} }
+    .animate-fadeInUp { animation: fadeInUp 1s ease-out both; }
+    .modal { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000; }
+    .modal.active { display:flex; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-50">
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-slate-950/60 border-b border-white/5">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <a href="#" class="text-lg font-semibold flex items-center gap-2">
+        <i data-lucide="map" class="w-6 h-6 text-fuchsia-400"></i>
+        <span class="gt">Sudipta Dutta</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button onclick="openModal('hireModal')" class="rounded-2xl border border-white/10 bg-white/5 px-4 py-2 text-sm hover:bg-fuchsia-500/20 transition">Hire me</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="mx-auto max-w-6xl px-4 py-16 grid md:grid-cols-[240px,1fr] gap-10 items-center">
+    <div class="flex justify-center md:justify-start">
+      <img src="profile.jpg" alt="Sudipta Dutta" class="h-48 w-48 rounded-full object-cover ring-2 ring-fuchsia-400 animate-fadeInUp">
+    </div>
+    <div>
+      <p class="text-sm uppercase tracking-[0.25em] text-white/60 animate-fadeInUp">GIS Analyst & Research Enthusiast</p>
+      <h1 class="mt-3 text-3xl md:text-5xl font-extrabold animate-fadeInUp">Hi, I'm <span class="gt">Sudipta Dutta</span></h1>
+      <p class="mt-4 text-white/70 max-w-2xl animate-fadeInUp">
+        M.Sc. Geo-Informatics graduate specializing in Forestry & Climate. Experienced with QGIS, ArcGIS, GEE, and Python. Passionate about sustainable ecosystems, geospatial analysis, and applying GIS for climate and forestry research.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3 animate-fadeInUp">
+        <a href="#projects" class="bg-white text-slate-900 px-5 py-2.5 rounded-2xl font-medium hover:opacity-90 transition">See my work</a>
+        <a href="resume.pdf" target="_blank" class="border border-white/15 px-5 py-2.5 rounded-2xl font-medium hover:bg-white/10 transition">View Resume</a>
+        <a href="#contact" class="border border-white/15 px-5 py-2.5 rounded-2xl font-medium hover:bg-white/10 transition">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold">Projects</h2>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Project 1 -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+        <img src="projects_images/Project 1/Fig. 1 (LULC 2017).jpg" class="h-40 w-full object-cover hover:scale-105 transition-transform" alt="Project 1">
+        <div class="p-5">
+          <h3 class="text-lg font-semibold">Forest Fire Risk Zone Mapping</h3>
+          <p class="mt-2 text-sm text-white/75">Mapped fire risk zones in Bankura, Puruliya, Jhargram & Medinipur districts using Analytic Hierarchy Process (AHP). Performed change detection for improved forest management.</p>
+          <button onclick="openModal('proj1')" class="mt-3 underline text-sm">View Gallery</button>
+        </div>
+      </article>
+      <!-- Project 2 -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+        <img src="projects_images/Project 2/Fig. 4 (Minimum Temparature).jpg" class="h-40 w-full object-cover hover:scale-105 transition-transform" alt="Project 2">
+        <div class="p-5">
+          <h3 class="text-lg font-semibold">Field Report on Western Ghats</h3>
+          <p class="mt-2 text-sm text-white/75">Conducted spatial analysis in Western Ghats covering Kerala, Karnataka & Goa. Assessed NDVI, LULC, elevation, slope, and rainfall distribution across multiple regions.</p>
+          <button onclick="openModal('proj2')" class="mt-3 underline text-sm">View Gallery</button>
+        </div>
+      </article>
+      <!-- Project 3 -->
+      <article class="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
+        <img src="projects_images/Project 3/Fig. 3 (Above Ground Biomass).jpg" class="h-40 w-full object-cover hover:scale-105 transition-transform" alt="Project 3">
+        <div class="p-5">
+          <h3 class="text-lg font-semibold">Forest Biomass Estimation</h3>
+          <p class="mt-2 text-sm text-white/75">Estimated above-ground biomass using Sentinel-2 data in GEE with Random Forest and Linear Regression. Validated results with field inventory datasets in Joypur & Bishnupur ranges.</p>
+          <button onclick="openModal('proj3')" class="mt-3 underline text-sm">View Gallery</button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold">Experience</h2>
+    <ol class="relative border-s border-white/10 mt-8">
+      <li class="ms-6 mb-10 animate-fadeInUp">
+        <span class="absolute -start-3 mt-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white/10 ring-2 ring-white/20">•</span>
+        <h3 class="font-semibold">Geo Infra Global Solution</h3>
+        <time class="text-xs text-white/60">March 2024 – Present</time>
+        <p class="mt-2 text-sm text-white/75">Worked on the DRRP Project involving geospatial analysis, disaster risk reduction planning, and map validation.</p>
+      </li>
+      <li class="ms-6 mb-10 animate-fadeInUp">
+        <span class="absolute -start-3 mt-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white/10 ring-2 ring-white/20">•</span>
+        <h3 class="font-semibold">Mitiosys Services Pvt. Ltd.</h3>
+        <time class="text-xs text-white/60">June 2024 – August 2024</time>
+        <p class="mt-2 text-sm text-white/75">Handled all types of digitization tasks including shapefile editing, geodatabase creation, and data validation.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="mx-auto max-w-6xl px-4 py-16">
+    <div class="rounded-2xl border border-white/10 bg-white/5 p-6 animate-fadeInUp">
+      <h2 class="text-2xl md:text-3xl font-bold">Let's Connect</h2>
+      <div class="mt-4 flex gap-4 text-white/75">
+        <a href="mailto:sudiptageoinformatics@gmail.com" target="_blank"><i data-lucide="mail" class="w-6 h-6"></i></a>
+        <a href="https://github.com/GeoNicCosmos" target="_blank"><i data-lucide="github" class="w-6 h-6"></i></a>
+        <a href="https://www.linkedin.com/in/sudiptageoinformatics22" target="_blank"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+        <a href="https://x.com/sudiptadutta072" target="_blank"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+        <a href="https://youtube.com/@sudiptaduttaa?si=OEP6Aybb0W2XqApy" target="_blank"><i data-lucide="youtube" class="w-6 h-6"></i></a>
+      </div>
+      <ul class="mt-6 text-sm text-white/75">
+        <li>Email: sudiptageoinformatics@gmail.com</li>
+        <li>Phone: +91 8101996749</li>
+        <li>WhatsApp: +91 7432875230</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-white/60 flex flex-col md:flex-row justify-between">
+      <p>© <span id="y"></span> Sudipta Dutta. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODALS -->
+  <div id="hireModal" class="modal">
+    <div class="bg-white text-slate-900 p-6 rounded-2xl max-w-md">
+      <h3 class="text-xl font-bold mb-2">Why Hire Me?</h3>
+      <p class="text-sm">I bring expertise in GIS, Forestry & Climate projects with hands-on experience in DRRP and digitization work. Skilled in ArcGIS, QGIS, GEE, and Python, I deliver accurate, data-driven results for research and industry.</p>
+      <button onclick="closeModal('hireModal')" class="mt-4 bg-fuchsia-500 text-white px-4 py-2 rounded-xl">Close</button>
+    </div>
+  </div>
+
+  <div id="proj1" class="modal"><img src="projects_images/Project 1/Fig. 2 (LULC 2022).jpg" class="max-h-[80vh] rounded-xl"><button onclick="closeModal('proj1')" class="absolute top-4 right-4 bg-white text-slate-900 px-3 py-1 rounded">X</button></div>
+  <div id="proj2" class="modal"><div class="flex flex-col gap-4 overflow-y-auto max-h-[80vh] p-4 bg-white rounded-xl"><img src="projects_images/Project 2/Fig. 4 (Minimum Temparature).jpg"><img src="projects_images/Project 2/Fig. 5 (Maximum Temparature).jpg"><img src="projects_images/Project 2/Fig. 6 (Wind Direction).jpg"><img src="projects_images/Project 2/Fig. 7 (Wind Speed).jpg"><img src="projects_images/Project 2/Fig. 8 (NDVI 2017).jpg"><img src="projects_images/Project 2/Fig. 9 (NDVI 2022).jpg"></div><button onclick="closeModal('proj2')" class="absolute top-4 right-4 bg-white text-slate-900 px-3 py-1 rounded">X</button></div>
+  <div id="proj3" class="modal"><img src="projects_images/Project 3/Fig. 3 (Above Ground Biomass).jpg" class="max-h-[80vh] rounded-xl"><button onclick="closeModal('proj3')" class="absolute top-4 right-4 bg-white text-slate-900 px-3 py-1 rounded">X</button></div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    lucide.createIcons();
+    function openModal(id){ document.getElementById(id).classList.add('active'); }
+    function closeModal(id){ document.getElementById(id).classList.remove('active'); }
+  </script>
+</body>
+</html>
